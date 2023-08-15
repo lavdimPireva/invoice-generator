@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="card">
+    <div className="card ms-5" style={{ width: "30rem", height: "45rem" }}>
       <img
         src={product.image}
         className="card-img-top"

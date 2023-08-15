@@ -5,7 +5,11 @@ export function ProductList({ products }) {
   return (
     <div className="row">
       {products.map((product) => (
-        <div className="col-md-3 mb-4 mt-4" key={product.id}>
+        <div
+          className="col-md-4 mb-4"
+          style={{ marginTop: "100px" }}
+          key={product.id}
+        >
           <ProductCard product={product} />
         </div>
       ))}
