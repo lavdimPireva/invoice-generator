@@ -11,10 +11,9 @@ function App() {
   const productsList = products;
 
   return (
-    <div className="">
+    <div>
       <NavBar />
-      <ProductList addToCart={addToCart} products={productsList} />
-      <Cart cartItems={cart} removeFromCart={removeFromCart} />
+      <ProductList products={productsList} />
       <button onClick={checkout}>Checkout</button>
     </div>
   );
