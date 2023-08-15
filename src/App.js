@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { ProductList } from "./components/ProductList/ProductList";
 import { Cart } from "./components/Cart/Cart";
-import { generateInvoice } from "./components/InvoiceCalculator/InvoiceCalculator";
 import NavBar from "./components/NavBar/NavBar";
 import { useCartContext } from "./components/context/CartContext";
 import { products } from "./components/Product/Product";

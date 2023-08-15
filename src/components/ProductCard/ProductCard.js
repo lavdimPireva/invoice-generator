@@ -2,10 +2,11 @@ import React from "react";
 
 const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="card mt-4 ms-5 " style={{ width: "20rem" }}>
+    <div className="card">
       <img
         src="https://ambrosiamagazine.com/wp-content/uploads/2020/02/zaros-mineral-water-greek-food-news.jpg"
-        className="card-img-top"
+        className="card-img-top p-4 ms-4"
+        style={{ width: "25rem" }}
         alt="Bottle of Water"
       />
       <div className="card-body p-4">
