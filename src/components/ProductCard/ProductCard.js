@@ -38,8 +38,9 @@ const ProductCard = ({ product }) => {
   return (
     <div className="card">
       <img
-        src="https://ambrosiamagazine.com/wp-content/uploads/2020/02/zaros-mineral-water-greek-food-news.jpg"
-        className="card-img-top "
+        src={product.image}
+        className="card-img-top"
+        style={{ height: "25rem", width: "30rem" }}
         alt="Bottle of Water"
       />
       <div className="card-body p-4">

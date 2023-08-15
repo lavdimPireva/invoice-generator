@@ -11,7 +11,7 @@ function App() {
   const productsList = products;
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#eaeded" }}>
       <NavBar />
       <ProductList products={productsList} />
       <button onClick={checkout}>Checkout</button>
