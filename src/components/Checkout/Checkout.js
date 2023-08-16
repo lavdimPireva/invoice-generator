@@ -15,8 +15,6 @@ const Checkout = ({ invoices }) => {
 
               const flattenedInvoiceItems = invoice.flatMap((item) => item);
 
-              console.log("flatten", flattenedInvoiceItems);
-
               flattenedInvoiceItems.forEach((invoice) => {
                 subtotal += invoice.subtotal;
                 vat += invoice.vat;
