@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 import { CartContext } from "./CartContext";
 import { generateInvoice } from "../InvoiceCalculator/InvoiceCalculator";
 
@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
   const [invoices, setInvoices] = useState([]);
   const [showInvoices, setShowInvoices] = useState(false);
 
-  console.log("cart", cart);
+  console.log("invoice", invoices);
 
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -46,7 +46,9 @@ const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, checkout }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, checkout, invoices }}
+    >
       {children}
     </CartContext.Provider>
   );

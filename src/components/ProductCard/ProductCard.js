@@ -28,6 +28,7 @@ const ProductCard = ({ product }) => {
       id: product.id,
       name: product.name,
       VAT: product.VAT,
+      price: product.price,
       discount: product.discount || 0,
       quantity: parseInt(quantity),
     };
