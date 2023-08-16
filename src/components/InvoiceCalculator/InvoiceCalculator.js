@@ -8,8 +8,9 @@ export function generateInvoice(cartItems) {
     return "No items in cart to generate invoice";
   }
 
+  console.log("cart items", cartItems);
+
   for (const item of cartItems) {
-    console.log("item ", item);
     newInvoiceForProduct = false;
 
     const { price, VAT, discount = 0, quantity } = item;

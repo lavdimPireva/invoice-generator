@@ -64,7 +64,10 @@ const ProductCard = ({ product }) => {
           />
         </div>
 
-        <button onClick={handleAddToCart} className="btn btn-primary mt-2">
+        <button
+          onClick={handleAddToCart}
+          className="btn btn-primary mt-5 d-block mx-auto "
+        >
           Add to Cart
         </button>
         {error && <p className="text-danger">{error}</p>}
