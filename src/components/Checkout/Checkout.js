@@ -15,13 +15,13 @@ const Checkout = ({ invoices }) => {
 
               const flattenedInvoiceItems = invoice.flatMap((item) => item);
 
-              flattenedInvoiceItems.forEach((invoice) => {
-                let itemPrice = invoice.price - invoice.discount;
-                vat += itemPrice * invoice.quantity * (invoice.VAT / 100);
-                subtotal += itemPrice * invoice.quantity;
-              });
+              console.log("flatten", flattenedInvoiceItems);
 
-              total = subtotal + vat;
+              flattenedInvoiceItems.forEach((invoice) => {
+                subtotal += invoice.subtotal;
+                vat += invoice.vat;
+                total += invoice.total;
+              });
 
               return (
                 <div className="container mb-5 mt-3" key={index}>
@@ -76,14 +76,14 @@ const Checkout = ({ invoices }) => {
                           <li className="text-muted ms-3 mt-2">
                             <span className="text-black me-4">VAT </span>
                             <span style={{ marginLeft: "30px" }}>
-                              ${vat?.toFixed(3)}
+                              ${vat?.toFixed(2)}
                             </span>
                           </li>
                         </ul>
                         <p className="text-black float-start">
                           <span className="text-black me-3">Total Amount</span>
                           <span style={{ fontSize: "25px" }}>
-                            ${total?.toFixed(3)}
+                            ${total?.toFixed(2)}
                           </span>
                         </p>
                       </div>

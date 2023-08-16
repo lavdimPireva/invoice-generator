@@ -12,12 +12,18 @@ export function generateInvoice(cartItems) {
     let remainingQuantity = quantity;
 
     while (remainingQuantity > 0) {
+      console.log("remaningQuantity", remainingQuantity);
+
       const invoiceQty = price >= 500 ? 1 : Math.min(50, remainingQuantity);
+
+      console.log("invoiceqty", invoiceQty);
+
       const invoicePrice = (price - discount) * invoiceQty;
       const invoiceVAT = (invoicePrice * VAT) / 100;
 
       if (currentSubTotal + invoicePrice + invoiceVAT > 500) {
         if (currentInvoice.length > 0) {
+          console.log("first");
           invoices.push(currentInvoice);
         }
         currentInvoice = [];
@@ -27,6 +33,8 @@ export function generateInvoice(cartItems) {
       currentInvoice.push({
         ...item,
         quantity: invoiceQty,
+        subtotal: invoicePrice,
+        vat: invoiceVAT,
         total: invoicePrice + invoiceVAT,
       });
 
